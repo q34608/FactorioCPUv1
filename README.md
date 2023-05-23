@@ -94,3 +94,89 @@
 有任何建议或想法欢迎在Issue区讨论。
 
 感谢您对异星工厂 CPU 的关注与支持！祝您在游戏中取得更多成就和乐趣！
+
+
+# Factorio CPU Project
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+![GitHub stars](https://img.shields.io/github/stars/q34608/FactorioCPUv1?style=social)
+
+The Factorio CPU is a custom CPU built with combinators for the [Factorio](https://www.factorio.com/) game. This project provides players with detailed CPU blueprints and an instruction set manual, aiming to help players achieve more advanced automation and computing features in the game to meet various complex scenarios.
+
+![Architecture Overview](assets/arch.png)
+
+## How to Get Started
+
+1. Make sure you have already purchased and installed the [Factorio](https://www.factorio.com/) game.
+2. Clone or download this project locally.
+3. Import the CPU blueprint into the game.
+4. Read the instruction set manual carefully to learn how to write programs for the CPU and how to control the CPU.
+
+## How to Import and Use Blueprints
+
+First, open the blueprint library in the game and click the import blueprint button. Paste the CPU blueprint string provided by this project into the game. Then, place the imported blueprint at an appropriate location in the game world. Make sure to provide the required power resources for the CPU.
+
+## How to Start the CPU?
+
+Find the control panel area in the CPU architecture, and then locate the switch and turn it on.
+
+![How to Power On](assets/power.png)
+
+## Instruction Set Details
+
+This project provides a detailed instruction set manual, including the function, parameters, and usage of each instruction. You can find the complete list of instruction sets in the [Instruction Set Manual.pdf](InstructionSetManual.pdf) file.
+
+When writing programs, please follow the format and specifications in the instruction set document. Write the program on the calculator in the game and connect it to the CPU.
+
+## Examples and Demos
+
+A sample program is preset in the blueprint for you. The purpose of this program is to calculate the sum of 1+2+3+...+100. After the calculation is completed, the program will pause.
+
+``` js
+Treat "sum result" as "register 1"
+Treat "loop counter" as "register 2"
+Store "0" in "sum result"
+Store "0" in "loop counter"
+"Loop Start":
+Calculate "loop counter" + "1" and store in "loop counter"
+Calculate "loop counter" + "sum result" and store in "sum result"
+If "loop counter" is greater than or equal to "100", do not jump to "Loop Start"
+
+"Program Pause":
+Jump to "Program Pause"
+```
+
+If you want to write your own program, please translate the program into machine code according to the instruction set manual and manually set it in the ROM. Taking the above example program as an example, you will get the following encoding:
+
+``` yaml
+0b010_00010_0001_00000000000000000000 = 1108344832
+0b010_00010_0010_00000000000000000000 = 1109393408
+0b001_00000_0010_0010_0000000000000001 = 539099137
+0b000_10010_0010_0001_000000000000_0001 = 304152577
+0b001_10110_0010_01100100_000000000010 = 908476418
+0b010_00001_000000000000000000000101 = 1090519045
+```
+
+Write the decimal values on the right side to the ROM:
+
+![Burn ROM](assets/rom.png)
+
+**How to verify that the CPU is running correctly?** According to the above program, the calculation result will be stored in "register 1". Register 1 is located on the far right of the register area, and each light above indicates the binary representation of the register content. After starting the CPU and running for a while, if you get the result of 1+2+3+...+100=5050, the program is running correctly:
+
+![Running Result](assets/result.png)
+
+As the current version does not include a display function, the result is only shown in binary form.
+
+## Future Development Plans
+
+We have set a series of development goals for the Factorio CPU, hoping to gradually achieve more functions to meet the various needs of players in the game.
+
+![Future Plans](assets/plan.png)
+
+## How to Contribute
+
+We warmly welcome all Factorio players and developers interested in this project to participate in the project development. If you want to contribute to the project, please follow these steps:
+
+1. Fork this repository
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
