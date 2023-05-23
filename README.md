@@ -1,11 +1,11 @@
 # 异星工厂 CPU 项目
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+![GitHub stars](https://img.shields.io/github/stars/q34608/FactorioCPUv1?style=social)
+
 异星工厂 CPU 是一个为 [异星工厂](https://www.factorio.com/) 游戏打造的基于运算器搭建的自定义 CPU。本项目为玩家提供了详尽的 CPU 蓝图以及指令集说明，旨在帮助玩家在游戏中实现更为高级的自动化和计算功能，以满足各种复杂场景的需求。
 
 ![架构说明](assets/arch.png)
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
-![GitHub stars](https://img.shields.io/github/stars/q34608/FactorioCPUv1?style=social)
 
 ## 如何开始使用
 
