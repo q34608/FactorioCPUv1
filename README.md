@@ -124,7 +124,7 @@ Find the control panel area in the CPU architecture, and then locate the switch 
 
 ## Instruction Set Details
 
-This project provides a detailed instruction set manual, including the function, parameters, and usage of each instruction. You can find the complete list of instruction sets in the [Instruction Set Manual.pdf](InstructionSetManual.pdf) file.
+This project provides a detailed instruction set manual, including the function, parameters, and usage of each instruction. You can find the complete list of instruction sets in the [Instruction Set Manual.pdf](指令集说明书.pdf) file.
 
 When writing programs, please follow the format and specifications in the instruction set document. Write the program on the calculator in the game and connect it to the CPU.
 
